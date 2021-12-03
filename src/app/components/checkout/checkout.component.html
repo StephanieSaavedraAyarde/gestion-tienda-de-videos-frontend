@@ -97,6 +97,6 @@
 </div>
 
 <div class="my-5 text-center" style="align-items: center;">
-  <h4>Your Cart Is Empty</h4>
-  <button class="btn-outline-danger btn-sm my-2" style="width: 100px;" routerLink="/country">Return!</button>
+  <h4 *ngIf="items==0">Your Cart Is Empty</h4>
+  <button *ngIf="items==0" class="btn-outline-danger btn-sm my-2" style="width: 100px;" routerLink="/country">Return!</button>
 </div>
