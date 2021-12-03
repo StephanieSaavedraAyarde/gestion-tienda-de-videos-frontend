@@ -1,0 +1,102 @@
+<app-intro></app-intro>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="shiping-details">
+                    <div class="section-title">
+                        <h3 class="title">Shiping address</h3>
+                    </div>
+                    <img src="https://us.123rf.com/450wm/phanuchat/phanuchat1510/phanuchat151000057/46691470-ilustraci%C3%B3n-vectorial-de-una-pel%C3%ADcula-de-observaci%C3%B3n-de-la-familia-de-la-familia-feliz-de-una-pel%C3%ADcu.jpg?ver=6" height="400px" width="400">
+                    <br>
+                    <div class="input-checkbox">
+                        <input type="checkbox" id="shiping-address">
+                        <label for="shiping-address">
+                            <span></span>
+                            Ship to a diffrent address?
+                        </label>
+                        <div class="caption">
+                            <div class="form-group">
+                                <input class="input" type="text" name="address" placeholder="Address">
+                            </div>
+                            <div class="form-group">
+                                <input class="input" type="text" name="address2" placeholder="Address 2">
+                            </div>
+                            <div class="form-group">
+                                <input class="input" type="text" name="district" placeholder="District">
+                            </div>
+                            <div class="form-group">
+                                <input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+                            </div>
+                            <div class="form-group">
+                                <input class="input" type="tel" name="tel" placeholder="Telephone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="order-notes">
+                <textarea class="input" placeholder="Order Notes"></textarea>
+            </div>
+        </div>
+
+        <div class="col-md-5 order-details">
+            <div class="section-title text-center">
+                <h3 class="title">Your Order</h3>
+            </div>
+            <div class="order-summary">
+                <div class="order-col">
+                    <div><strong>FILM</strong></div>
+                    <div><strong>SUBTOTAL</strong></div>
+                </div>
+                <div class="order-products" *ngFor="let c of cartItemList">
+                    <div class="order-col">
+                        <div>{{c.title}}</div>
+                        <div>0.99 USD</div>
+                    </div>
+                </div>
+                <div class="order-col">
+                    <div>Shipping</div>
+                    <div><strong>FREE</strong></div>
+                </div>
+                <div class="order-col dropdown-divider">
+                    <div><strong>TOTAL</strong></div>
+                    <div><strong class="order-total">USD</strong></div>
+                </div>
+            </div>
+            <div class="payment-method">
+                <div class="input-radio">
+                    <input type="radio" name="payment" id="payment-1">
+                    <label for="payment-1">
+                        <span></span>
+                        Direct Bank Transfer
+                    </label>
+                </div>
+                <div class="input-radio">
+                    <input type="radio" name="payment" id="payment-2">
+                    <label for="payment-2">
+                        <span></span>
+                        Cheque Payment
+                    </label>
+                </div>
+                <div class="input-radio">
+                    <input type="radio" name="payment" id="payment-3">
+                    <label for="payment-3">
+                        <span></span>
+                        Paypal System
+                    </label>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn-outline-success btn-sm my-2 btn-block">Confirm order</button>
+                <button type="submit" class="btn-outline-danger btn-sm my-2 btn-block">Cancel order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-5 text-center" style="align-items: center;">
+  <h4>Your Cart Is Empty</h4>
+  <button class="btn-outline-danger btn-sm my-2" style="width: 100px;" routerLink="/country">Return!</button>
+</div>

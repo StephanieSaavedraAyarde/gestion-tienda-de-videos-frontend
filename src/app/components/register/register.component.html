@@ -1,0 +1,33 @@
+<app-intro></app-intro>
+<section>
+    <div class="col-md-12 text-center">
+        <div class="section-title">
+            <br>
+            <h2 class="title">¡Welcome, Sing Up!</h2>
+        </div>
+        <img src="https://us.123rf.com/450wm/phanuchat/phanuchat1510/phanuchat151000057/46691470-ilustraci%C3%B3n-vectorial-de-una-pel%C3%ADcula-de-observaci%C3%B3n-de-la-familia-de-la-familia-feliz-de-una-pel%C3%ADcu.jpg?ver=6" height="300px" width="300">
+        <br>
+        <h6 class="title">Por favor Ingrese sus datos para registrarse al sistema</h6>
+        <br>
+    </div>
+</section>
+<form #formTemplate = "ngForm" (ngSubmit)="onSubmit(formTemplate)">
+    <div class="billing-details text-center">
+        <div class="form-group">
+            <input class="input" type="text" name="firstName" placeholder="First Name" [(ngModel)]="customer.firstName" style="width:500px;">
+        </div>
+        <div class="form-group">
+            <input class="input" type="text" name="lastName" placeholder="Last Name" [(ngModel)]="customer.lastName" style="width:500px">
+        </div>
+        <div class="form-group">
+            <input class="input" type="email" name="email" placeholder="Email" [(ngModel)]="customer.email" style="width:500px">
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn-outline-danger btn-sm my-2" style="border-radius:10px; width:300px">Register</button>
+
+        <br><br>
+        <a routerLink="/login">Have an account? Sign In</a>
+    </div>
+</form>
+

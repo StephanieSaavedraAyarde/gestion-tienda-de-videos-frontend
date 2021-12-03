@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div class="container">
+    <div class="my-5 text-center" style="align-items: center;" *ngIf="items==1">
+        <br>
+        <h4 *ngIf="items==1">Your Cart Is Empty</h4>
+        <button  *ngIf="items<1" class="btn-outline-danger btn-sm my-2" style="width: 200px; height: 40px;" (click)="return()">Return Shopping</button>
+    </div>
+
+    <br>
+    <ng-container >
+        <h3 class="text-center">YOUR CART</h3>
+        <div>
+            <h6>Fecha de devolución: &nbsp;&nbsp;
+                <input [ngModel]="days" type="number" id="fecha" min="1" max="7">
+                <button class="btn-outline-success btn-sm my-2 btn-block" (click)="getTotal()"> Calculate Total</button>
+            </h6>
+        </div>
+        <div class="row">
+            <div class="col my-4">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr class="text-center">
+                            <th>Film</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center;">
+                        <tr *ngFor="let c of cartItemList">
+                            <td class="d-flex align-items-center justify-content-around" >
+                                <img src="https://picsum.photos/200" height="60" class="order-1">
+                            </td>
+                            <td>
+                                <p>{{c.title}}</p>
+                            </td>
+                            <td>
+                                <p>{{c.description}}</p>
+                            </td>
+                            <td>
+                                <p>0.99</p>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                <span class="text-danger" style="cursor: pointer;" (click)="removeToCart(c)"><i class="fa fa-trash" ></i></span>
+                            </td>
+                        </tr>
+                        <tr class="border-0">
+                            <td style="border: none;"></td>
+                            <td></td>
+                            <td>TOTAL</td>
+                            <td>{{getTotal()}} USD</td>
+
+                            <td></td>
+                            <td></td>    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="col-md-12 d-flex mb-5">
+                <div class="d-flex justify-content-center w-100 flex-sm-column flex-md-row">
+                    <button class="btn-outline-danger btn-sm my-2 btn-block" style="width: 200px; height: 40px;" (click)="checkout()">Checkout</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn-outline-success btn-sm my-2 btn-block" style="width: 200px; height: 40px;" (click)="return()">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>  
+</div>
+  

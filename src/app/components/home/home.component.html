@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="section">
+    <div class="col-md-12 text-center">
+        <div class="section-title">
+          <h2 class="title">Alquila tu pelicula Favorita</h2>
+        </div>
+    </div>
+    <!--Estrenos-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Estrenos</h3>
+                </div>
+            </div>
+            <div class="d-flex flex-row flex-nowrap overflow-auto" >
+                <div class="col-md-4 col-sm-6" *ngFor="let p of premiere">
+                    <div class="card my-2">
+                        <img src="https://picsum.photos/id/{{p.random}}/100/100" width="100px" class="card-img-top" style="cursor:pointer;">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <p>{{p.title}}</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6>{{p.description}}</h6>
+                            <p class="lead"> 0.99 USD</p>
+                        </div>
+    
+                        <div class="row d-flex justify-content-center border-primary my-3">
+                            <div class="col-md-6 ">
+                                <!-- Verificar que no este en la lista global -->
+                                <button class="btn-outline-success btn-sm my-2 btn-block"
+                                        [class.disabled]="verificar(p.filmId)"
+                                        [class.btn-outline-danger]="verificar(p.filmId)"
+                                        [disabled]="p.quantity < 1" (click)=addtocart(p)>
+                                        {{!verificar(p.filmId) ? "Add to cart" : "In Cart"}} 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!--Las más rentadas de la Ultima Semana-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">La más rentadas de la Ultima Semana</h3>
+                </div>
+            </div>
+            <div class="d-flex flex-row flex-nowrap overflow-auto" >
+                <div class="col-md-4 col-sm-6" *ngFor="let l of lastweek">
+                    <div class="card my-2">
+                        <img src="https://picsum.photos/id/{{l.random}}/100/100" width="100px" class="card-img-top" style="cursor:pointer;">
+                        <div class="card-header">
+                        <div class="card-title">
+                            <p>{{l.title}}</p>
+                        </div>
+                        </div>
+                        <div class="card-body">
+                        <h6>{{l.description}}</h6>
+                        <p class="lead"> 0.99 USD</p>
+                        </div>
+        
+                        <div class="row d-flex justify-content-center border-primary my-3">
+                            <div class="col-md-6 ">
+                                <!-- Verificar que no este en la lista global -->
+                                <button class="btn-outline-danger btn-sm my-2 btn-block"
+                                        [class.disabled]="verificar(l.filmId)"
+                                        [class.btn-outline-danger]="verificar(l.filmId)"
+                                        [disabled]="l.quantity < 1" (click)=addtocart(l)>
+                                        {{!verificar(l.filmId) ? "Add to cart" : "In Cart"}} 
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!--Las más rentadas de todos los tiempos-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Las más rentadas de todos los tiempos</h3>
+                </div>
+            </div>
+            <div class="d-flex flex-row flex-nowrap overflow-auto" >
+                <div class="col-md-4 col-sm-6" *ngFor="let a of alltimes">
+                    <div class="card my-2">
+                        <img src="https://picsum.photos/id/{{a.random}}/100/100" width="100px" class="card-img-top" style="cursor:pointer;">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <p>{{a.title}}</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6>{{a.description}}</h6>
+                            <p class="lead"> 0.99 USD</p>
+                        </div>
+                        <div class="row d-flex justify-content-center border-primary my-3">
+                            <div class="col-md-6 ">
+                                <!-- Verificar que no este en la lista global -->
+                                <button class="btn-outline-danger btn-sm my-2 btn-block"
+                                        [class.disabled]="verificar(a.filmId)"
+                                        [class.btn-outline-danger]="verificar(a.filmId)"
+                                        [disabled]="a.quantity < 1" (click)=addtocart(a)>
+                                        {{!verificar(a.filmId) ? "Add to cart" : "In Cart"}} 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div> 
+</div>

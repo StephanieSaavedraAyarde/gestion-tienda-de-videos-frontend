@@ -1,0 +1,72 @@
+<header>
+    <div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li><a href="#"><i class="fa fa-phone"></i> +591 73218363</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> stephanie.saavedra@ucb.edu.bo</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> La Paz, Bolivia</a></li>
+            </ul>
+            <ul class="header-links pull-right">
+                <li><a><i class="fa fa-dollar"></i> USD</a></li>
+                <li><a (click)="return()"><i class="fa fa-home"></i>Home</a></li>
+                <li><a *ngIf="isLogged==false" routerLink="/login"><i class="fa fa-user-o"></i> Sign In</a></li>
+                <li><a *ngIf="isLogged==false" routerLink="/register"><i class="fa fa-user-o"></i> Sign Up</a></li>
+                <li><a *ngIf="isLogged!=true" (click)="logout()" routerLink="/"><i class="fa fa-user-o"></i> Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <br>
+                    <div class="header-logo">
+                        <a routerLink="/" class="logo">
+                        <img src="https://cdn-images-1.medium.com/max/640/1*11v8YEqVzUt6-dUGQF_zaw@2x.png" alt="" width="200px" height="50px">
+                        </a>
+                    </div>
+                </div>
+        
+                <div>
+                    <br>
+                    <div class="header-search form-group">
+                        <form>
+                            <select class="input-select" id="opcion">
+                                <option name="option" value="0" >Film's Title</option>
+                                <option name="option" value="1">Actor's name</option>
+                            </select>
+                            <input class="input" name="value" placeholder="Search here">
+                            <button class="search-btn" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+        
+                <div class="col-md-3 clearfix">
+                    <div class="header-ctn">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" (click)="cart()" aria-expanded="true" style="cursor: pointer;">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>Your Cart</span>
+                                <div class="qty">{{totalItem}}</div>
+                            </a>
+                            <div class="cart-dropdown">
+                                <div class="cart-summary">
+                                    <small> {{totalItem}} Item(s) selected</small>
+                                    <h5>TOTAL: {{totalItem*0.99}} USD</h5>
+                                </div>
+                                <div class="cart-btns">
+                                    <a routerLink="/cart">View Cart</a>
+                                    <a routerLink="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+  
+<nav id="navigation"> </nav>
+  
