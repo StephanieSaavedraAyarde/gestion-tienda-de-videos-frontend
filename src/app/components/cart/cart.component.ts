@@ -51,9 +51,15 @@ export class CartComponent implements OnInit {
   }
 
   checkout(){
-      this.router.navigate(['/checkout']);
-      console.log("Nos vamos a checkout");
 
+    this.login = parseInt(localStorage.getItem('login'));
+        if(this.login == 1){
+          this.router.navigate(['/checkout']);
+          console.log("Nos vamos a checkout");
+        }else{
+          this.router.navigate(['/login']);
+          console.log("Nos vamos a checkout");
+        }
   }
 
   getTotal(){

@@ -15,6 +15,7 @@ import { AlertService } from 'src/app/services/alert.service';
 export class RegisterComponent implements OnInit {
     idCountry: string  = localStorage.getItem('idCountry')!;
     id: Number = parseInt(this.idCountry);
+    login: any;
 
     customer: any = {
         storeId: this.id,
